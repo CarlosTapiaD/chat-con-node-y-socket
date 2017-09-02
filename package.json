@@ -1,0 +1,19 @@
+{
+  "name": "chatnodepym",
+  "version": "1.0.0",
+  "description": "chat con socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CarlosTapiaDominguez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
