@@ -10,7 +10,7 @@ app.get('/',(req,res)=>{
 	res.status(200).send('Hola mundo desde una ruta');
 });
 
-let  message=[{
+let  message=[{ 
 	id:1,
 	text:'bienvenido al chat',
 	nickname:'Bot -Tapia'}];
