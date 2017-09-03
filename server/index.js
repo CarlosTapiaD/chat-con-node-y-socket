@@ -10,9 +10,15 @@ app.get('/',(req,res)=>{
 	res.status(200).send('Hola mundo desde una ruta');
 });
 
+let  message=[{
+	id:1,
+	text:'bienvenido al chat',
+	nickname:'Bot -Tapia'}];
+
 //abrir sockets 
 io.on('connection',(socket)=>{
-	console.log('El nodo con IP: '+ socket.handsnake.address+ 'se ha conectado... ');
+	console.log('El nodo con IP: '+ socket.handshake.address + 'se ha conectado... ');
+	socket.emit('message',message)
 });
 
 
