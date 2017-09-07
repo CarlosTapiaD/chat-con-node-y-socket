@@ -9,16 +9,19 @@ app.use(express.static('cliente'));
 app.get('/',(req,res)=>{
 	res.status(200).send('Hola mundo desde una ruta');
 });
-
-let  messages=[{ 
+//la variable donde se almacena los chat
+let  messages=[{
 	id:1,
 	text:'bienvenido al chat',
 	nickname:'Bot -Tapia'}];
 
-//abrir sockets 
+//abrir sockets
 io.on('connection',(socket)=>{
+	//manda la ip de la maquina que se conecto
 	console.log('El nodo con IP: '+ socket.handshake.address + 'se ha conectado... ');
+	//emite el mensaje al main.js para agregarlo a la vista
 	socket.emit('message',messages)
+	//recibe el dato de main.js y agrega el dato a la variable donde se guarda las conversaciones
 	socket.on ('add-message',(data)=>{
 		messages.push(data);
 		io.sockets.emit('message',messages);
