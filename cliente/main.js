@@ -1,5 +1,5 @@
 //Cambia segun la ip que tengas ipv4
-var socket=io.connect('http://192.168.1.69:6677',{'forceNew':true});
+var socket=io.connect('http://192.168.0.100:6677',{'forceNew':true});
 socket.on('message',(data)=>{
 	console.log(data);
 	render(data);
